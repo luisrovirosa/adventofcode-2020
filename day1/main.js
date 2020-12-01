@@ -19,10 +19,10 @@ find2020InGroupsOf2();
 
 function find2020InGroupsOf3() {
     let combinationsOf3Elements = [];
-    for (k = 0; k < numbers.length - 2; k++) {
-        for (j = k + 1; j < numbers.length - 1; j++) {
-            for (i = j + 1; i < numbers.length; i++) {
-                combinationsOf3Elements.push([parseInt(numbers[k]), parseInt(numbers[j]), parseInt(numbers[i])]);
+    for (i = 0; i < numbers.length - 2; i++) {
+        for (j = i + 1; j < numbers.length - 1; j++) {
+            for (k = j + 1; k < numbers.length; k++) {
+                combinationsOf3Elements.push([parseInt(numbers[i]), parseInt(numbers[j]), parseInt(numbers[k])]);
             }
         }
     }
