@@ -7,8 +7,8 @@ const combinations = numbers.flatMap(
     (v, i) => numbers.slice(i+1).map( w => [parseInt(v),parseInt(w)] )
 );
 
-const combination = combinations.find((combination) => (combination[0] + combination[1]) === 2020)
-console.log(combination);
+const [number1, number2] = combinations.find(([a, b]) => (a + b) === 2020)
+console.log(number1, number2);
 
-const result = combination[0] * combination[1]
+const result = number1 * number2
 console.log(result);
