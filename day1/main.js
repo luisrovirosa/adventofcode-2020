@@ -1,14 +1,38 @@
 fs = require('fs');
 
 const file = fs.readFileSync('input.txt', 'utf8');
-const numbers = file.split("\n")
+const numbers = file.split('\n').slice(0, -1); // Phpstorm adds an empty line at the end of the file
 
-const combinations = numbers.flatMap(
-    (v, i) => numbers.slice(i+1).map( w => [parseInt(v), parseInt(w)] )
-);
+function find2020InGroupsOf2() {
+    const combinationsOf2Elements = numbers.flatMap(
+        (v, i) => numbers.slice(i + 1).map(w => [parseInt(v), parseInt(w)]),
+    );
 
-const [number1, number2] = combinations.find(([a, b]) => (a + b) === 2020)
-console.log({number1, number2});
+    const [number1, number2] = combinationsOf2Elements.find(([a, b]) => (a + b) === 2020);
+    console.log({number1, number2});
 
-const result = number1 * number2
-console.log(result);
+    const result = number1 * number2;
+    console.log(result);
+}
+
+find2020InGroupsOf2();
+
+function find2020InGroupsOf3() {
+    let combinationsOf3Elements = [];
+    for (k = 0; k < numbers.length - 2; k++) {
+        for (j = k + 1; j < numbers.length - 1; j++) {
+            for (i = j + 1; i < numbers.length; i++) {
+                combinationsOf3Elements.push([parseInt(numbers[k]), parseInt(numbers[j]), parseInt(numbers[i])]);
+            }
+        }
+    }
+
+    const [number1, number2, number3] = combinationsOf3Elements.find(([a, b, c]) => (a + b + c) === 2020
+    );
+    console.log({number1, number2, number3});
+
+    const result = number1 * number2 * number3;
+    console.log(result);
+}
+
+find2020InGroupsOf3();
