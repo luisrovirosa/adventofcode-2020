@@ -1,5 +1,5 @@
-const passwordValidator = require('./passwordValidator');
+import {countValidPasswords} from './passwordValidator';
 
-test('xxx', () => {
-    expect(true).toBe(true);
+test('password only with required letters is valid', () => {
+    expect(countValidPasswords('1-2 m: m')).toBe(1);
 });
