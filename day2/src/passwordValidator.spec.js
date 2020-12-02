@@ -1,8 +1,12 @@
 import {countValidPasswords} from './passwordValidator';
 
 describe('password is valid when', () => {
-    test('contains only the required letter', () => {
+    test('contains the minimum number of times the required letter', () => {
         expect(countValidPasswords('1-2 m: m')).toBe(1);
+    });
+
+    test('contains the maximum number of times the required letter', () => {
+        expect(countValidPasswords('1-2 m: mm')).toBe(1);
     });
 });
 
