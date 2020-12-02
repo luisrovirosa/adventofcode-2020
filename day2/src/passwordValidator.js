@@ -5,7 +5,7 @@ function isValid(policyAndPassword) {
     let isInFirstPosition = password[firstPosition - 1] === requiredLetter;
     let isInSecondPosition = password[secondPosition - 1] === requiredLetter;
 
-    return isInFirstPosition || isInSecondPosition;
+    return isInFirstPosition ^ isInSecondPosition; // Xor operator
 }
 
 function countValidPasswords(policiesAndPasswordsAsString) {

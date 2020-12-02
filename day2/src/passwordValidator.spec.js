@@ -22,13 +22,13 @@ describe('password is not valid when', () => {
         expect(countValidPasswords('1-2 m: abmm')).toBe(0);
     });
 
-    xtest('contains the letter in both positions', () => {
+    test('contains the letter in both positions', () => {
         expect(countValidPasswords('2-3 m: amm')).toBe(0);
     });
 });
 
 describe('multiples passwords', () => {
-    xtest('sum more than one password valid', () => {
+    test('sum more than one password valid', () => {
         expect(countValidPasswords('1-2 m: ma\n1-2 m: ma')).toBe(2);
     });
 
