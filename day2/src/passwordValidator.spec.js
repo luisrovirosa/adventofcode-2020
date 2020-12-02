@@ -30,3 +30,10 @@ describe('password is not valid when', () => {
         expect(countValidPasswords('1-2 m: mmm')).toBe(0);
     });
 });
+
+describe('multiples passwords', () => {
+    test('sum more than one password valid', () => {
+        expect(countValidPasswords('1-2 m: m\n1-2 m: m')).toBe(2);
+    });
+
+});

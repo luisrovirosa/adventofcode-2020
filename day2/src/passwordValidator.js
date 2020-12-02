@@ -7,8 +7,10 @@ function isValid(policyAndPassword) {
     return numberOfTimes >= minimumNumberOfTimes && numberOfTimes <= maximumNumberOfTimes;
 }
 
-function countValidPasswords(policyAndPassword) {
-    return isValid(policyAndPassword) ? 1 : 0;
+function countValidPasswords(policiesAndPasswordsAsString) {
+    const policiesAndPasswords = policiesAndPasswordsAsString.split('\n');
+    let validPasswords = policiesAndPasswords.filter(isValid);
+    return validPasswords.length;
 }
 
 export {countValidPasswords};
