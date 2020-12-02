@@ -37,3 +37,10 @@ describe('multiples passwords', () => {
     });
 
 });
+
+test('with provided input', () => {
+    const fs = require('fs');
+    const file = fs.readFileSync('input.txt', 'utf8');
+
+    console.log(countValidPasswords(file));
+})
