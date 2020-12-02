@@ -1,10 +1,10 @@
 function isValid(policyAndPassword) {
     const [policy, password] = policyAndPassword.split(': ');
-    const [times, requiredLetter] = policy.split(' ');
-    const [minimumNumberOfTimes, maximumNumberOfTimes] = times.split('-');
-    let numberOfTimes = password.split(requiredLetter).length - 1;
+    const [positions, requiredLetter] = policy.split(' ');
+    const [firstPosition, secondPosition] = positions.split('-');
+    let isInFirstPosition = password[firstPosition - 1] === requiredLetter;
 
-    return numberOfTimes >= minimumNumberOfTimes && numberOfTimes <= maximumNumberOfTimes;
+    return isInFirstPosition;
 }
 
 function countValidPasswords(policiesAndPasswordsAsString) {
