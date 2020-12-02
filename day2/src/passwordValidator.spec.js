@@ -7,6 +7,7 @@ describe('password is valid when', () => {
 
     test('contains the maximum number of times the required letter', () => {
         expect(countValidPasswords('1-2 m: mm')).toBe(1);
+        expect(countValidPasswords('1-3 m: mmm')).toBe(1);
     });
 });
 
