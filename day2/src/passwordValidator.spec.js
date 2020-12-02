@@ -12,13 +12,13 @@ describe('password is valid when', () => {
     });
 
     test('contains extra letters and the required letters', () => {
-        expect(countValidPasswords('1-2 m: mamm')).toBe(1);
-        expect(countValidPasswords('1-3 m: mmamm')).toBe(1);
+        expect(countValidPasswords('1-2 m: mamam')).toBe(1);
+        expect(countValidPasswords('1-3 m: mmamam')).toBe(1);
     });
 });
 
 describe('password is not valid when', () => {
-    xtest('does not contain the letter in any of the two positions', () => {
+    test('does not contain the letter in any of the two positions', () => {
         expect(countValidPasswords('1-2 m: abmm')).toBe(0);
     });
 

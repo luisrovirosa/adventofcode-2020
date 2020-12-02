@@ -3,7 +3,7 @@ function isValid(policyAndPassword) {
     const [positions, requiredLetter] = policy.split(' ');
     const [firstPosition, secondPosition] = positions.split('-');
     let isInFirstPosition = password[firstPosition - 1] === requiredLetter;
-    let isInSecondPosition = password[secondPosition] === requiredLetter;
+    let isInSecondPosition = password[secondPosition - 1] === requiredLetter;
 
     return isInFirstPosition || isInSecondPosition;
 }
