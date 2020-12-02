@@ -3,8 +3,9 @@ function isValid(policyAndPassword) {
     const [positions, requiredLetter] = policy.split(' ');
     const [firstPosition, secondPosition] = positions.split('-');
     let isInFirstPosition = password[firstPosition - 1] === requiredLetter;
+    let isInSecondPosition = password[secondPosition] === requiredLetter;
 
-    return isInFirstPosition;
+    return isInFirstPosition || isInSecondPosition;
 }
 
 function countValidPasswords(policiesAndPasswordsAsString) {

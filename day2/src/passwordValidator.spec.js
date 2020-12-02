@@ -6,7 +6,7 @@ describe('password is valid when', () => {
         expect(countValidPasswords('10-12 m: mmmmmmmmmmasmmm')).toBe(1);
     });
 
-    xtest('has the letter in the second position and not the first one', () => {
+    test('has the letter in the second position and not the first one', () => {
         expect(countValidPasswords('1-2 m: amm')).toBe(1);
         expect(countValidPasswords('1-3 m: ammmm')).toBe(1);
     });
