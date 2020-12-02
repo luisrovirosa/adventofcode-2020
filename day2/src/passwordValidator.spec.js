@@ -10,6 +10,11 @@ describe('password is valid when', () => {
         expect(countValidPasswords('1-2 m: mm')).toBe(1);
         expect(countValidPasswords('1-3 m: mmm')).toBe(1);
     });
+
+    test('contains extra letters and the required letters', () => {
+        expect(countValidPasswords('1-2 m: mam')).toBe(1);
+        expect(countValidPasswords('1-3 m: mmam')).toBe(1);
+    });
 });
 
 describe('password is not valid when', () => {
