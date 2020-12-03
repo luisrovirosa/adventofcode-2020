@@ -45,6 +45,11 @@ describe('extends the world', () => {
     let map = '..\n.#\n.#\n.#';
     expect(numberOfTrees([1, 1], map)).toBe(2);
   });
+
+  it('twice', () => {
+    let map = '..\n.#\n.#\n.#\n..\n.#\n.#\n.#';
+    expect(numberOfTrees([1, 1], map)).toBe(4);
+  });
 });
 
 describe('moves 2 in vertical trajectory', () => {
