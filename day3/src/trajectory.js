@@ -5,11 +5,13 @@ function hasATree(x, y, map) {
 
 function numberOfTrees(movement, mapAsString) {
   let map = mapAsString.split('\n');
-  map = map.map((row) => row + row).map((row) => row + row).map((row) => row + row);
   let numberOfTrees = 0;
   let x = 0;
   let y = 0;
   while (y < map.length) {
+    if (x > map[0].length){
+      map = map.map((row) => row + row);
+    }
     if (hasATree(x, y, map)) {
       numberOfTrees++;
     }
