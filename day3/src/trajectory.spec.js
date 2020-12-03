@@ -1,8 +1,8 @@
-import {xxx} from './trajectory';
+import {numberOfTrees} from './numberOfTrees';
 
-describe('xxx', () => {
-    test('xxx', () => {
-        expect(xxx()).toBe(true);
+describe('No trajectory', () => {
+    test('find no tree when the initial position has no tree', () => {
+        expect(numberOfTrees([], '.#..........#......#..#.....#..')).toBe(0);
     });
 
 });
