@@ -8,7 +8,7 @@ function numberOfTrees(movement, mapAsString) {
   let numberOfTrees = 0;
   let x = 0;
   let y = 0;
-  for (let i = 0; movement[1] * i < map.length; i++) {
+  while (y < map.length) {
     if (hasATree(x, y, map)) {
       numberOfTrees++;
     }
