@@ -55,6 +55,13 @@ describe('extends the world', () => {
     let map = '..\n.#\n.#\n.#\n..\n.#\n.#\n.#\n..\n.#\n.#\n.#';
     expect(numberOfTrees([1, 1], map)).toBe(6);
   });
+
+  it('in the limit', () => {
+    let map =
+        '..\n' +
+        '#.';
+    expect(numberOfTrees([2, 1], map)).toBe(1);
+  });
 });
 
 describe('moves 2 in vertical trajectory', () => {
@@ -127,7 +134,7 @@ describe('solutions', () => {
     expect(numberOfTrees([3, 1], map)).toBe(247);
   });
 
-  test('second part', () => {
+  xtest('second part', () => {
     const fs = require('fs');
     const map = fs.readFileSync('input.txt', 'utf8');
 

@@ -32,7 +32,7 @@ function hasNotArrived(y, map) {
 }
 
 function doesNotFitInTheMap(x, map) {
-  return x > map[0].length;
+  return x >= map[0].length;
 }
 
 function extendTheMap(map) {
