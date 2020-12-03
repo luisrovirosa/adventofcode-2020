@@ -84,7 +84,7 @@ describe('acceptance test', () => {
     expect(numberOfTrees([3, 1], map)).toBe(7);
   });
 
-  xtest('real one', () => {
+  test('real one', () => {
     let map =
         '..##.......\n' +
         '#...#...#..\n' +
