@@ -40,6 +40,13 @@ describe('2 movement trajectory', () => {
   });
 });
 
+describe('extends the world', () => {
+  it('once', () => {
+    let map = '..\n.#\n.#\n.#';
+    expect(numberOfTrees([1, 1], map)).toBe(2);
+  });
+});
+
 describe('moves 2 in vertical trajectory', () => {
   test('find two tree when first and second movement has a tree', () => {
     let map =

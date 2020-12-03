@@ -4,7 +4,8 @@ function hasATree(x, y, map) {
 }
 
 function numberOfTrees(movement, mapAsString) {
-  const map = mapAsString.split('\n');
+  let map = mapAsString.split('\n');
+  map = map.map((row) => row + row);
   let numberOfTrees = 0;
   let x = 0;
   let y = 0;
