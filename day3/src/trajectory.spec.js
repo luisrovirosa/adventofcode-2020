@@ -16,4 +16,9 @@ describe('1 movement trajectory', () => {
     expect(numberOfTrees([1, 1], map)).toBe(1 );
   });
 
+  test('find no tree when the final position has no tree', () => {
+    let map = '.#..........#......#..#.....#..\n.#..........#......#..#.....#..';
+    expect(numberOfTrees([2, 1], map)).toBe(0);
+  });
+
 });
