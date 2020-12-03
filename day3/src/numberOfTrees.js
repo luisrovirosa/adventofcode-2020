@@ -5,11 +5,9 @@ function hasATree(position, map) {
 
 function numberOfTrees(movement, map) {
   let position = 0;
-  let numberOfTrees;
+  let numberOfTrees = 0;
   if (hasATree(position, map)) {
-    numberOfTrees = 1;
-  } else {
-    numberOfTrees = 0;
+    numberOfTrees++;
   }
   return numberOfTrees;
 }
