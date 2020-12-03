@@ -1,4 +1,4 @@
-import {numberOfTrees} from './numberOfTrees';
+import {numberOfTrees} from './trajectory';
 
 describe('No trajectory', () => {
   test('find no tree when the initial position has no tree', () => {
