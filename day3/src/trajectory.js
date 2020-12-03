@@ -1,16 +1,3 @@
-function hasATree(x, y, map) {
-  let square = map[y][x];
-  return square === '#';
-}
-
-function fitsInTheMap(x, map) {
-  return x <= map[0].length;
-}
-
-function extendTheMap(map) {
-  return map.map((row) => row + row);
-}
-
 function numberOfTrees(movement, mapAsString) {
   let map = mapAsString.split('\n');
   let numberOfTrees = 0;
@@ -28,5 +15,20 @@ function numberOfTrees(movement, mapAsString) {
   }
   return numberOfTrees;
 }
+
+function fitsInTheMap(x, map) {
+  return x <= map[0].length;
+}
+
+function extendTheMap(map) {
+  return map.map((row) => row + row);
+}
+
+function hasATree(x, y, map) {
+  let square = map[y][x];
+  return square === '#';
+}
+
+
 
 export {numberOfTrees};
