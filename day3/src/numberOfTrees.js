@@ -5,7 +5,11 @@ function hasATree(position, map) {
 
 function numberOfTrees(movement, map) {
   let position = 0;
-  return hasATree(position, map) ? 1 : 0;
+  if (hasATree(position, map)) {
+    return 1;
+  } else {
+    return 0;
+  }
 }
 
 export {numberOfTrees};
