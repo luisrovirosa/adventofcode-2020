@@ -9,3 +9,11 @@ describe('No trajectory', () => {
     expect(numberOfTrees([], '#...........#......#..#.....#..')).toBe(1);
   });
 });
+
+describe('1 movement trajectory', () => {
+  xtest('find no tree when the initial position has no tree', () => {
+    let map = '.#..........#......#..#.....#..\n.#..........#......#..#.....#..';
+    expect(numberOfTrees([1, 1], map)).toBe(1 );
+  });
+
+});
