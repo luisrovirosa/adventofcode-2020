@@ -3,14 +3,22 @@ function hasATree(x, y, map) {
   return square === '#';
 }
 
+function fitsInTheMap(x, map) {
+  return x <= map[0].length;
+}
+
+function extendTheMap(map) {
+  return map.map((row) => row + row);
+}
+
 function numberOfTrees(movement, mapAsString) {
   let map = mapAsString.split('\n');
   let numberOfTrees = 0;
   let x = 0;
   let y = 0;
   while (y < map.length) {
-    if (x > map[0].length){
-      map = map.map((row) => row + row);
+    if (!fitsInTheMap(x, map)){
+      map = extendTheMap(map);
     }
     if (hasATree(x, y, map)) {
       numberOfTrees++;
