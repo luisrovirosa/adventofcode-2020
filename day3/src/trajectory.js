@@ -5,21 +5,9 @@ function hasATree(position, map) {
 
 function numberOfTrees(movement, mapAsString) {
   const map = mapAsString.split('\n');
-
-  let position = [0, 0];
   let numberOfTrees = 0;
-  if (map.length >= 1) {
-    if (hasATree([movement[1]*0, movement[0]*0], map)) {
-      numberOfTrees++;
-    }
-  }
-  if (map.length >= 2) {
-    if (hasATree([movement[1]*1, movement[0]*1], map)) {
-      numberOfTrees++;
-    }
-  }
-  if (map.length >= 3){
-    if (hasATree([movement[1]*2, movement[0]*2], map)) {
+  for (let i = 0; i < map.length; i++) {
+    if (hasATree([movement[1]*i, movement[0]*i], map)) {
       numberOfTrees++;
     }
   }
