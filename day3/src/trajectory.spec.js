@@ -1,4 +1,4 @@
-import {numberOfTrees} from './trajectory';
+import {numberOfTrees, secondPart} from './trajectory';
 
 describe('No trajectory', () => {
   test('find no tree when the initial position has no tree', () => {
@@ -99,8 +99,25 @@ describe('acceptance test', () => {
         '.#..#...#.#';
     expect(numberOfTrees([3, 1], map)).toBe(7);
   });
-});
 
+  test('second part real one', () => {
+    let map =
+        '..##.......\n' +
+        '#...#...#..\n' +
+        '.#....#..#.\n' +
+        '..#.#...#.#\n' +
+        '.#...##..#.\n' +
+        '..#.##.....\n' +
+        '.#.#.#....#\n' +
+        '.#........#\n' +
+        '#.##...#...\n' +
+        '#...##....#\n' +
+        '.#..#...#.#';
+
+    expect(secondPart(map)).toBe(336);
+  });
+
+});
 
 describe('solutions', () => {
   test('first part', () => {

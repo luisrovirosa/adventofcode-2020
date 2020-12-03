@@ -1,3 +1,8 @@
+function secondPart(theMap) {
+  return [[1, 1], [3, 1], [5, 1], [7, 1], [1, 2]].map(movement => numberOfTrees(movement, theMap)).
+      reduce((acumulator, currentValue) => acumulator * currentValue)
+}
+
 function numberOfTrees(movement, mapAsString) {
   let map = mapAsString.split('\n');
   let numberOfTrees = 0;
@@ -33,4 +38,4 @@ function hasATree(x, y, map) {
   return square === '#';
 }
 
-export {numberOfTrees};
+export {numberOfTrees, secondPart};
