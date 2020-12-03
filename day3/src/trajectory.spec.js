@@ -99,8 +99,17 @@ describe('acceptance test', () => {
         '.#..#...#.#';
     expect(numberOfTrees([3, 1], map)).toBe(7);
   });
-
 });
 
+
+describe('solutions', () => {
+  test('first part', () => {
+    const fs = require('fs');
+    const map = fs.readFileSync('input.txt', 'utf8');
+
+    expect(numberOfTrees([3, 1], map)).toBe(247);
+  });
+
+});
 
 
