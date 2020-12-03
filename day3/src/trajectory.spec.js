@@ -5,4 +5,8 @@ describe('No trajectory', () => {
         expect(numberOfTrees([], '.#..........#......#..#.....#..')).toBe(0);
     });
 
+    test('find one tree when the initial position has a tree', () => {
+        expect(numberOfTrees([], '#...........#......#..#.....#..')).toBe(1);
+    });
+
 });
