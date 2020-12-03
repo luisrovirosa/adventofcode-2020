@@ -27,8 +27,15 @@ describe('2 movement trajectory', () => {
   test('find two tree when first and second movement has a tree', () => {
     let map =
         '.#..........#......#..#.....#..\n' +
-        '.##.........#......#..#.....#..\n' +
-        '.#.#........#......#..#.....#..';
+        '.#..........#......#..#.....#..\n' +
+        '..#.........#......#..#.....#..';
     expect(numberOfTrees([1, 1], map)).toBe(2);
+  });
+  test('find one tree when only first movement has a tree', () => {
+    let map =
+        '............#......#..#.....#..\n' +
+        '.#..........#......#..#.....#..\n' +
+        '............#......#..#.....#..';
+    expect(numberOfTrees([1, 1], map)).toBe(1);
   });
 });
