@@ -11,7 +11,7 @@ describe('No trajectory', () => {
 });
 
 describe('1 movement trajectory', () => {
-  xtest('find no tree when the initial position has no tree', () => {
+  test('find one tree when the final position has a tree', () => {
     let map = '.#..........#......#..#.....#..\n.#..........#......#..#.....#..';
     expect(numberOfTrees([1, 1], map)).toBe(1 );
   });
