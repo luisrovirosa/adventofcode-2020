@@ -134,11 +134,11 @@ describe('solutions', () => {
     expect(numberOfTrees([3, 1], map)).toBe(247);
   });
 
-  xtest('second part', () => {
+  test('second part', () => {
     const fs = require('fs');
     const map = fs.readFileSync('input.txt', 'utf8');
 
-    expect(secondPart(map)).toBe(2855588736);
+    expect(secondPart(map)).toBe(2983070376);
   });
 
 });
