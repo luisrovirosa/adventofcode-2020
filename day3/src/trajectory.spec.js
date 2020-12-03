@@ -39,3 +39,13 @@ describe('2 movement trajectory', () => {
     expect(numberOfTrees([1, 1], map)).toBe(1);
   });
 });
+
+describe('moves 2 in vertical trajectory', () => {
+  test('find two tree when first and second movement has a tree', () => {
+    let map =
+        '............#......#..#.....#..\n' +
+        '.#..........#......#..#.....#..\n' +
+        '.##.........#......#..#.....#..';
+    expect(numberOfTrees([1, 2], map)).toBe(1);
+  });
+});
