@@ -1,5 +1,8 @@
 function numberOfTrees(movement, map) {
-  return map[0] === '.' ? 0 : 1;
+  let position = 0;
+  let square = map[position];
+  let hasATree = square === '#';
+  return hasATree ? 1 : 0;
 }
 
 export {numberOfTrees};
