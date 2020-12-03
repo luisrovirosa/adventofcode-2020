@@ -12,7 +12,7 @@ function numberOfTrees(movement, mapAsString) {
     numberOfTrees++;
   }
   if (map.length >= 2) {
-    if (hasATree([movement[1], movement[0]], map)) {
+    if (hasATree([movement[1]*1, movement[0]*1], map)) {
       numberOfTrees++;
     }
   }
