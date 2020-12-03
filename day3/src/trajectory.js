@@ -8,8 +8,10 @@ function numberOfTrees(movement, mapAsString) {
 
   let position = [0, 0];
   let numberOfTrees = 0;
-  if (hasATree(position, map)) {
-    numberOfTrees++;
+  if (map.length >= 1) {
+    if (hasATree([movement[1]*0, movement[0]*0], map)) {
+      numberOfTrees++;
+    }
   }
   if (map.length >= 2) {
     if (hasATree([movement[1]*1, movement[0]*1], map)) {
