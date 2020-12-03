@@ -13,7 +13,7 @@ describe('No trajectory', () => {
 describe('1 movement trajectory', () => {
   test('find one tree when the final position has a tree', () => {
     let map = '.#..........#......#..#.....#..\n.#..........#......#..#.....#..';
-    expect(numberOfTrees([1, 1], map)).toBe(1 );
+    expect(numberOfTrees([1, 1], map)).toBe(1);
   });
 
   test('find no tree when the final position has no tree', () => {
@@ -21,4 +21,14 @@ describe('1 movement trajectory', () => {
     expect(numberOfTrees([2, 1], map)).toBe(0);
   });
 
+});
+
+describe('2 movement trajectory', () => {
+  test('find two tree when first and second movement has a tree', () => {
+    let map =
+        '.#..........#......#..#.....#..\n' +
+        '.##.........#......#..#.....#..\n' +
+        '.#.#........#......#..#.....#..';
+    expect(numberOfTrees([1, 1], map)).toBe(2);
+  });
 });
