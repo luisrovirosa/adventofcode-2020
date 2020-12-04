@@ -36,7 +36,9 @@ function includesBirthYear(passport) {
 }
 
 function includesIssueYear(passport) {
-  return passport.includes('iyr');
+  let match = passport.match(/iyr:(\d+)/);
+
+  return match && match[1] < 2020;
 }
 
 function includesHeight(passport) {
