@@ -26,6 +26,12 @@ describe('invalid passports', () => {
         expect(countValidPassports(passport)).toBe(0);
     });
 
+    test('missing Hair Color (hcl)', () => {
+        let passport = 'ecl:gry pid:860033327 eyr:2020\n' +
+            'byr:1937 iyr:2017 cid:147 hgt:183cm';
+        expect(countValidPassports(passport)).toBe(0);
+    });
+
     xtest('missing xxx', () => {
         let passport = 'ecl:gry pid:860033327 eyr:2020 hcl:#fffffd\n' +
             'byr:1937 iyr:2017 cid:147 hgt:183cm';
