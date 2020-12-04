@@ -44,7 +44,8 @@ function includesIssueYear(passport) {
 }
 
 function includesHeight(passport) {
-  return passport.includes('hgt');
-}
+  let match = passport.match(/hgt:(\d+)cm/);
+
+  return match && match[1] >= 150 && match[1] <= 2020;}
 
 export {countValidPassports};
