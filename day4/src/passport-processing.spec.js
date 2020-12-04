@@ -43,6 +43,17 @@ describe('valid passports', () => {
         expect(countValidPassports(passport)).toBe(1);
     });
 
+    test('Hair color can have numbers from 0 to 5', () => {
+        let passport = 'ecl:gry pid:860033327 eyr:2020 hcl:#012345\n' +
+            'byr:1937 iyr:2017 cid:147 hgt:183cm';
+        expect(countValidPassports(passport)).toBe(1);
+    });
+
+    test('Hair color can have numbers from 6 to 9', () => {
+        let passport = 'ecl:gry pid:860033327 eyr:2020 hcl:#6789ab\n' +
+            'byr:1937 iyr:2017 cid:147 hgt:183cm';
+        expect(countValidPassports(passport)).toBe(1);
+    });
 
 });
 describe('Is invalid passport when', () => {

@@ -28,7 +28,7 @@ function includesExpirationYear(passport) {
 }
 
 function includesHairColor(passport) {
-  let match = passport.match(/hcl:(#[a-f]{6})[^a-f]/);
+  let match = passport.match(/hcl:(#[0-9a-f]{6})[^a-f]/);
 
   return match;
 }
