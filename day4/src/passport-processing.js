@@ -22,7 +22,9 @@ function includesPassportId(passport) {
 }
 
 function includesExpirationYear(passport) {
-  return passport.includes('eyr');
+  let match = passport.match(/eyr:(\d+)/);
+
+  return match && match[1] >= 2020 && match[1] <= 2030;
 }
 
 function includesHairColor(passport) {
