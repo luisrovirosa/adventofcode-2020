@@ -8,9 +8,9 @@ function isValidPassport(passport) {
       passport.includes('hgt');
 }
 
-function countValidPassports(passports) {
-  let isValid = isValidPassport(passports);
-  return isValid ? 1 : 0;
+function countValidPassports(passportsAsString) {
+  let passports = passportsAsString.split('\n\n');
+  return passports.filter(isValidPassport).length;
 }
 
 export {countValidPassports};
