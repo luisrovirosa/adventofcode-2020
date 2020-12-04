@@ -6,6 +6,13 @@ describe('valid passports', () => {
             'byr:1937 iyr:2017 cid:147 hgt:183cm';
         expect(countValidPassports(passport)).toBe(1);
     });
+
+
+    test('missing Country id (cid)', () => {
+        let passport = 'ecl:gry pid:860033327 eyr:2020 hcl:#fffffd\n' +
+            'byr:1937 iyr:2017 hgt:183cm';
+        expect(countValidPassports(passport)).toBe(1);
+    });
 });
 describe('invalid passports', () => {
     test('missing Eye Color (ecl)', () => {
