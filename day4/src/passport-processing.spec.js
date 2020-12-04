@@ -175,6 +175,16 @@ describe('Is invalid passport when', () => {
     expect(countValidPassports(passport)).toBe(0);
   });
 
+  describe('invalid eyes colors', () => {
+    ['marron', 'azul', 'gris', 'verde'].forEach(color => {
+      test(`${color}`, () => {
+        let passport = `ecl:${color} pid:860033327 eyr:2020 hcl:#fffffd\n` +
+            'byr:1937 iyr:2017 cid:147 hgt:183cm';
+        expect(countValidPassports(passport)).toBe(0);
+      });
+    });
+  });
+
 });
 
 describe('multiple passports', () => {

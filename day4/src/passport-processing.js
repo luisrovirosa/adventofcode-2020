@@ -14,7 +14,8 @@ function isValidPassport(passport) {
 }
 
 function includesEyeColor(passport) {
-  return passport.includes('ecl');
+  let match = passport.match(/ecl:([a-zA-Z]+)/);
+  return match && ['amb', 'blu', 'brn', 'gry', 'grn', 'hzl', 'oth'].includes(match[1]);
 }
 
 function includesPassportId(passport) {
