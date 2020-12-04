@@ -19,6 +19,18 @@ describe('valid passports', () => {
         expect(countValidPassports(passport)).toBe(1);
     });
 
+    test('should have Issue year at least 2010', () => {
+        let passport = 'ecl:gry pid:860033327 eyr:2020 hcl:#fffffd\n' +
+            'byr:1920 iyr:2010 cid:147 hgt:183cm';
+        expect(countValidPassports(passport)).toBe(1);
+    });
+
+    test('should have Issue year up to 2020', () => {
+        let passport = 'ecl:gry pid:860033327 eyr:2020 hcl:#fffffd\n' +
+            'byr:2002 iyr:2020 cid:147 hgt:183cm';
+        expect(countValidPassports(passport)).toBe(1);
+    });
+
 
     test('missing Country id (cid)', () => {
         let passport = 'ecl:gry pid:860033327 eyr:2020 hcl:#fffffd\n' +
