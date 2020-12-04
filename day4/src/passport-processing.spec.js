@@ -7,6 +7,12 @@ describe('valid passports', () => {
     expect(countValidPassports(passport)).toBe(1);
   });
 
+  test('Hair color can be at the end of the string', () => {
+    let passport = 'pid:087499704 hgt:74in ecl:grn iyr:2012 eyr:2030 byr:1980\n' +
+        'hcl:#623a2f';
+    expect(countValidPassports(passport)).toBe(1);
+  });
+
   test('birth year should be at least 1920', () => {
     let passport = 'ecl:gry pid:860033327 eyr:2020 hcl:#fffffd\n' +
         'byr:1920 iyr:2017 cid:147 hgt:183cm';
