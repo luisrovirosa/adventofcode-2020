@@ -45,7 +45,7 @@ describe('valid passports', () => {
 
 
 });
-describe('invalid passports', () => {
+describe('Is invalid passport when', () => {
     test('missing Eye Color (ecl)', () => {
         let passport = 'pid:860033327 eyr:2020 hcl:#fffffd\n' +
             'byr:1937 iyr:2017 cid:147 hgt:183cm';
@@ -133,6 +133,12 @@ describe('invalid passports', () => {
     test('Height is greater than 76in', () => {
         let passport = 'ecl:gry pid:860033327 eyr:2020 hcl:#fffffd\n' +
             'byr:1937 iyr:2017 cid:147 hgt:77in';
+        expect(countValidPassports(passport)).toBe(0);
+    });
+
+    test('Hair Color has no #', () => {
+        let passport = 'ecl:gry pid:860033327 eyr:2020 hcl:ffffffd\n' +
+            'byr:1937 iyr:2017 cid:147 hgt:183cm';
         expect(countValidPassports(passport)).toBe(0);
     });
 });
