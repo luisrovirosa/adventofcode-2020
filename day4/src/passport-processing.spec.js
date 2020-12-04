@@ -64,6 +64,12 @@ describe('invalid passports', () => {
             'byr:2003 iyr:2017 cid:147 hgt:183cm';
         expect(countValidPassports(passport)).toBe(0);
     });
+
+    test('byr must have 4 digits and being at least 1920', () => {
+        let passport = 'ecl:gry pid:860033327 eyr:2020 hcl:#fffffd\n' +
+            'byr:1919 iyr:2017 cid:147 hgt:183cm';
+        expect(countValidPassports(passport)).toBe(0);
+    });
 });
 
 

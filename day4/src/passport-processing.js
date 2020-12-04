@@ -32,7 +32,7 @@ function includesHairColor(passport) {
 function includesBirthYear(passport) {
   let match = passport.match(/byr:(\d+)/);
 
-  return match && match[1] <= 2002;
+  return match && match[1] >= 1920 && match[1] <= 2002;
 }
 
 function includesIssueYear(passport) {
