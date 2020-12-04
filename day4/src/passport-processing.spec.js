@@ -185,6 +185,18 @@ describe('Is invalid passport when', () => {
     });
   });
 
+  test('Passport Id with less than 9 digits', () => {
+    let passport = 'ecl:gry pid:86003332 eyr:2020 hcl:#fffffd\n' +
+        'byr:1937 iyr:2017 cid:147 hgt:183cm';
+    expect(countValidPassports(passport)).toBe(0);
+  });
+
+  test('Passport Id with more than 9 digits', () => {
+    let passport = 'ecl:gry pid:8600333223 eyr:2020 hcl:#fffffd\n' +
+        'byr:1937 iyr:2017 cid:147 hgt:183cm';
+    expect(countValidPassports(passport)).toBe(0);
+  });
+
 });
 
 describe('multiple passports', () => {

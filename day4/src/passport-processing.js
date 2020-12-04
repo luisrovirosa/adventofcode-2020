@@ -19,7 +19,7 @@ function includesEyeColor(passport) {
 }
 
 function includesPassportId(passport) {
-  return passport.includes('pid');
+  return passport.match(/pid:([0-9]{9})[^0-9]/);
 }
 
 function includesExpirationYear(passport) {
