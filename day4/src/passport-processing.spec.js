@@ -147,6 +147,12 @@ describe('Is invalid passport when', () => {
             'byr:1937 iyr:2017 cid:147 hgt:183cm';
         expect(countValidPassports(passport)).toBe(0);
     });
+
+    test('Hair Color has more than 6 characters', () => {
+        let passport = 'ecl:gry pid:860033327 eyr:2020 hcl:#fffffff\n' +
+            'byr:1937 iyr:2017 cid:147 hgt:183cm';
+        expect(countValidPassports(passport)).toBe(0);
+    });
 });
 
 
