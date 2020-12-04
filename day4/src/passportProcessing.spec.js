@@ -51,9 +51,9 @@ describe('invalid passports', () => {
         expect(countValidPassports(passport)).toBe(0);
     });
 
-    xtest('missing xxx', () => {
+    test('missing Height (hgt)', () => {
         let passport = 'ecl:gry pid:860033327 eyr:2020 hcl:#fffffd\n' +
-            'byr:1937 iyr:2017 cid:147 hgt:183cm';
+            'byr:1937 iyr:2017 cid:147';
         expect(countValidPassports(passport)).toBe(0);
     });
 });
