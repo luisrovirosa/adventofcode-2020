@@ -112,6 +112,12 @@ describe('invalid passports', () => {
             'byr:1937 iyr:2017 cid:147 hgt:149cm';
         expect(countValidPassports(passport)).toBe(0);
     });
+
+    test('Height is greater than 193', () => {
+        let passport = 'ecl:gry pid:860033327 eyr:2020 hcl:#fffffd\n' +
+            'byr:1937 iyr:2017 cid:147 hgt:194cm';
+        expect(countValidPassports(passport)).toBe(0);
+    });
 });
 
 
