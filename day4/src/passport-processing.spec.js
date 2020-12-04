@@ -71,13 +71,13 @@ describe('invalid passports', () => {
         expect(countValidPassports(passport)).toBe(0);
     });
 
-    test('byr must have 4 digits and being up to 2002', () => {
+    test('Birth Year is greater than 2002', () => {
         let passport = 'ecl:gry pid:860033327 eyr:2020 hcl:#fffffd\n' +
             'byr:2003 iyr:2017 cid:147 hgt:183cm';
         expect(countValidPassports(passport)).toBe(0);
     });
 
-    test('byr must have 4 digits and being at least 1920', () => {
+    test('Birth Year is smaller than 1920', () => {
         let passport = 'ecl:gry pid:860033327 eyr:2020 hcl:#fffffd\n' +
             'byr:1919 iyr:2017 cid:147 hgt:183cm';
         expect(countValidPassports(passport)).toBe(0);
