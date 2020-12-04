@@ -88,6 +88,12 @@ describe('invalid passports', () => {
             'byr:1937 iyr:2021 cid:147 hgt:183cm';
         expect(countValidPassports(passport)).toBe(0);
     });
+
+    test('Issuer Year is smaller than 2010', () => {
+        let passport = 'ecl:gry pid:860033327 eyr:2020 hcl:#fffffd\n' +
+            'byr:1937 iyr:2009 cid:147 hgt:183cm';
+        expect(countValidPassports(passport)).toBe(0);
+    });
 });
 
 
