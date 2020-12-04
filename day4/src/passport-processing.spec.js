@@ -229,7 +229,7 @@ describe('multiple passports', () => {
     expect(countValidPassports(passport)).toBe(0);
   });
 
-  xtest('valid passports', () => {
+  test('valid passports', () => {
     let passport = 'pid:087499704 hgt:74in ecl:grn iyr:2012 eyr:2030 byr:1980\n' +
         'hcl:#623a2f\n' +
         '\n' +
@@ -248,10 +248,10 @@ describe('multiple passports', () => {
 });
 
 describe('solutions', () => {
-  xtest('first part', () => {
+  test('second part', () => {
     const fs = require('fs');
     const passports = fs.readFileSync('input.txt', 'utf8');
 
-    expect(countValidPassports(passports)).toBe(190);
+    expect(countValidPassports(passports)).toBe(121);
   });
 });
