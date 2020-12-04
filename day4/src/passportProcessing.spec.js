@@ -13,4 +13,10 @@ describe('invalid passports', () => {
             'byr:1937 iyr:2017 cid:147 hgt:183cm';
         expect(countValidPassports(passport)).toBe(0);
     });
+
+    test('missing Passport ID (pid)', () => {
+        let passport = 'ecl:gry eyr:2020 hcl:#fffffd\n' +
+            'byr:1937 iyr:2017 cid:147 hgt:183cm';
+        expect(countValidPassports(passport)).toBe(0);
+    });
 });
