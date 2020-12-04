@@ -78,3 +78,12 @@ describe('multiple passports', () => {
        expect(countValidPassports(passport)).toBe(2);
    })
 });
+
+describe('solutions', () => {
+    test('first part', () => {
+        const fs = require('fs');
+        const passports = fs.readFileSync('input.txt', 'utf8');
+
+        expect(countValidPassports(passports)).toBe(190);
+    });
+});
