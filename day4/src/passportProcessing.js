@@ -1,6 +1,15 @@
+function isValidPassport(passport) {
+  return passport.includes('ecl') &&
+      passport.includes('pid') &&
+      passport.includes('eyr') &&
+      passport.includes('hcl') &&
+      passport.includes('byr') &&
+      passport.includes('iyr') &&
+      passport.includes('hgt');
+}
+
 function countValidPassports(passports) {
-  let isValid = passports.includes('ecl') && passports.includes('pid') && passports.includes('eyr') &&
-      passports.includes('hcl') && passports.includes('byr') && passports.includes('iyr') && passports.includes('hgt');
+  let isValid = isValidPassport(passports);
   return isValid ? 1 : 0;
 }
 
