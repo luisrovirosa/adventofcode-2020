@@ -54,6 +54,16 @@ describe('valid passports', () => {
             'byr:1937 iyr:2017 cid:147 hgt:183cm';
         expect(countValidPassports(passport)).toBe(1);
     });
+    describe('Valid eyes colors', () => {
+
+    ['amb','blu','brn','gry','grn','hzl','oth'].forEach(color => {
+      test(`${color}`, () => {
+        let passport = `ecl:${color} pid:860033327 eyr:2020 hcl:#fffffd\n` +
+              'byr:1937 iyr:2017 cid:147 hgt:183cm';
+        expect(countValidPassports(passport)).toBe(1);
+      });
+    })
+  });
 
 });
 describe('Is invalid passport when', () => {
@@ -164,6 +174,7 @@ describe('Is invalid passport when', () => {
             'byr:1937 iyr:2017 cid:147 hgt:183cm';
         expect(countValidPassports(passport)).toBe(0);
     });
+
 });
 
 
