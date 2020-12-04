@@ -13,6 +13,11 @@ describe('valid passports', () => {
     expect(countValidPassports(passport)).toBe(1);
   });
 
+  test('Passport Id can be at the end of the string', () => {
+    let passport = 'iyr:2010 hgt:158cm hcl:#b6652a ecl:blu byr:1944 eyr:2021 pid:093154719';
+    expect(countValidPassports(passport)).toBe(1);
+  });
+
   test('birth year should be at least 1920', () => {
     let passport = 'ecl:gry pid:860033327 eyr:2020 hcl:#fffffd\n' +
         'byr:1920 iyr:2017 cid:147 hgt:183cm';
