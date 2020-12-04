@@ -31,6 +31,11 @@ describe('valid passports', () => {
         expect(countValidPassports(passport)).toBe(1);
     });
 
+    test('should have Height greater at least 60in', () => {
+        let passport = 'ecl:gry pid:860033327 eyr:2020 hcl:#fffffd\n' +
+            'byr:1937 iyr:2017 cid:147 hgt:60in';
+        expect(countValidPassports(passport)).toBe(1);
+    });
 
     test('missing Country id (cid)', () => {
         let passport = 'ecl:gry pid:860033327 eyr:2020 hcl:#fffffd\n' +
@@ -119,10 +124,15 @@ describe('invalid passports', () => {
         expect(countValidPassports(passport)).toBe(0);
     });
 
-
     test('Height is smaller than 59in', () => {
         let passport = 'ecl:gry pid:860033327 eyr:2020 hcl:#fffffd\n' +
             'byr:1937 iyr:2017 cid:147 hgt:58in';
+        expect(countValidPassports(passport)).toBe(0);
+    });
+
+    test('Height is greater than 76in', () => {
+        let passport = 'ecl:gry pid:860033327 eyr:2020 hcl:#fffffd\n' +
+            'byr:1937 iyr:2017 cid:147 hgt:77in';
         expect(countValidPassports(passport)).toBe(0);
     });
 });

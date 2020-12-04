@@ -44,8 +44,14 @@ function includesIssueYear(passport) {
 }
 
 function includesHeight(passport) {
-  let match = passport.match(/hgt:(\d+)cm/);
+  const heightInCm = passport.match(/hgt:(\d+)cm/);
+  const validHeightInCm = heightInCm && heightInCm[1] >= 150 && heightInCm[1] <= 193;
 
-  return match && match[1] >= 150 && match[1] <= 193;}
+  const heightInIn = passport.match(/hgt:(\d+)in/);
+  const validHeightInIn = heightInIn && heightInIn[1] >= 59 && heightInIn[1] <= 76;
+
+
+  return validHeightInCm || validHeightInIn;
+}
 
 export {countValidPassports};
