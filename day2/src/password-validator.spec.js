@@ -1,4 +1,4 @@
-import {countValidPasswords} from './passwordValidator';
+import {countValidPasswords} from './password-validator';
 
 describe('password is valid when', () => {
     test('has the letter in the first position and not the second one', () => {

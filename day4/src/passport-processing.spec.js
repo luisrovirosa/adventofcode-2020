@@ -1,4 +1,4 @@
-import {countValidPassports} from './passportProcessing';
+import {countValidPassports} from './passport-processing';
 
 describe('valid passports', () => {
     test('sample valid passport', () => {
