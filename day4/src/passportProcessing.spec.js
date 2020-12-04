@@ -7,3 +7,10 @@ describe('valid passports', () => {
         expect(countValidPassports(passport)).toBe(1);
     });
 });
+describe('invalid passports', () => {
+    test('missing Eye Color (ecl)', () => {
+        let passport = 'pid:860033327 eyr:2020 hcl:#fffffd\n' +
+            'byr:1937 iyr:2017 cid:147 hgt:183cm';
+        expect(countValidPassports(passport)).toBe(0);
+    });
+});
