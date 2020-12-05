@@ -1,8 +1,8 @@
-import {boardingPass} from './boarding-pass';
+import {row} from './boarding-pass';
 
-describe('xxx', () => {
-    test('xxx', () => {
-        expect(boardingPass()).toBe(true);
+describe('Test first', () => {
+    test('row FBFBBFFRLR is 44', () => {
+        expect(row('FBFBBFFRLR')).toBe(44);
     });
 
 });
