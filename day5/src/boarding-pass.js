@@ -1,4 +1,14 @@
-function highest(boardingPasses){
+function mySeat(boardingPasses) {
+  const seats = occupiedSeats(boardingPasses);
+  for (let i = 0; i < seats.length - 1; i++) {
+    if (seats[i] - seats[i + 1] === 2) {
+      return seats[i] - 1;
+    }
+  }
+
+}
+
+function highest(boardingPasses) {
   return (occupiedSeats(boardingPasses))[0];
 }
 
@@ -7,7 +17,7 @@ function occupiedSeats(boardingPasses) {
 }
 
 function id(boardingPass) {
-  return row(boardingPass)* 8 + column(boardingPass);
+  return row(boardingPass) * 8 + column(boardingPass);
 }
 
 function row(boardingPass) {
@@ -31,4 +41,4 @@ function binaryPartition(firstPartLetter, accumulator, position) {
       : [accumulator[0] + halfDistance, accumulator[1]];
 }
 
-export {row, column, id, highest};
+export {row, column, id, highest, mySeat};
