@@ -1,4 +1,4 @@
-import {row, column, id} from './boarding-pass';
+import {row, column, id, highest} from './boarding-pass';
 
 describe('Test first', () => {
     test('row FBFBBFFRLR is 44', () => {
@@ -12,5 +12,13 @@ describe('Test first', () => {
     test('id FBFBBFFRLR is 357', () => {
         expect(id('FBFBBFFRLR')).toBe(357);
     });
+});
 
+describe('solutions', () => {
+    test('first part', () => {
+        const fs = require('fs');
+        const boardingPasses = fs.readFileSync('input.txt', 'utf8');
+
+        expect(highest(boardingPasses)).toBe(935);
+    });
 });

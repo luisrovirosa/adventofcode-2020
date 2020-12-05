@@ -1,3 +1,7 @@
+function highest(boardingPasses){
+  return boardingPasses.split('\n').map(id).sort((a,b) => b - a)[0];
+}
+
 function id(boardingPass) {
   return row(boardingPass)* 8 + column(boardingPass);
 }
@@ -23,4 +27,4 @@ function binaryPartition(firstPartLetter, accumulator, position) {
       : [accumulator[0] + halfDistance, accumulator[1]];
 }
 
-export {row, column, id};
+export {row, column, id, highest};
