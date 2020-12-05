@@ -1,3 +1,7 @@
+function id(boardingPass) {
+  return row(boardingPass)* 8 + column(boardingPass);
+}
+
 function binaryPartition(firstPartLetter, accumulator, position) {
   const halfDistance = (accumulator[1] - accumulator[0] + 1) / 2;
   return position === firstPartLetter
@@ -19,4 +23,4 @@ function column(boardingPass) {
   return columns.reduce(extracted('L'), [0, 7])[0];
 }
 
-export {row, column};
+export {row, column, id};
