@@ -1,5 +1,9 @@
 function highest(boardingPasses){
-  return boardingPasses.split('\n').map(id).sort((a,b) => b - a)[0];
+  return (occupiedSeats(boardingPasses))[0];
+}
+
+function occupiedSeats(boardingPasses) {
+  return boardingPasses.split('\n').map(id).sort((a, b) => b - a);
 }
 
 function id(boardingPass) {
