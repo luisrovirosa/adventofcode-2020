@@ -1,12 +1,16 @@
 import {customCustoms, differentAnswersInAGroup} from './custom-customs';
 
 describe('single groups', () => {
-   test('one person group', () => {
+   test('count the answers of 1 person group', () => {
        expect(differentAnswersInAGroup('abc')).toBe(3);
     });
 
-   test('multiple person group', () => {
+   test('count the answers of multiple person group', () => {
        expect(differentAnswersInAGroup('abc\nde\nf')).toBe(6);
+    });
+
+   test('repeated answers does not count twice', () => {
+       expect(differentAnswersInAGroup('abc\nbc')).toBe(3);
     });
 });
 

@@ -2,8 +2,9 @@ function customCustoms() {
   return true;
 }
 
-function differentAnswersInAGroup (groupAnswers){
-  return groupAnswers.replace(/\n/g, '').split('').length;
+function differentAnswersInAGroup (groupAnswersAsString){
+  let groupAnswers = groupAnswersAsString.replace(/\n/g, '').split('');
+  return [...new Set(groupAnswers)].length;
 }
 
 export {customCustoms, differentAnswersInAGroup};
