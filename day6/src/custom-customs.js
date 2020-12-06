@@ -2,4 +2,8 @@ function customCustoms() {
   return true;
 }
 
-export {customCustoms};
+function differentAnswersInAGroup (groupAnswers){
+  return groupAnswers.split('').length;
+}
+
+export {customCustoms, differentAnswersInAGroup};

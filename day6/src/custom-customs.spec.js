@@ -1,4 +1,10 @@
-import {customCustoms} from './custom-customs';
+import {customCustoms, differentAnswersInAGroup} from './custom-customs';
+
+describe('single groups', () => {
+   test('one person group', () => {
+       expect(differentAnswersInAGroup('abc')).toBe(3);
+    });
+});
 
 xdescribe('acceptance test', () => {
     test('number of different answers', () => {
