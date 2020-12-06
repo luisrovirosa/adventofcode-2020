@@ -1,5 +1,5 @@
-function customCustoms() {
-  return true;
+function customCustoms(allGroupAnswersAsString) {
+  return allGroupAnswersAsString.split('\n\n').map(differentAnswersInAGroup).reduce((a,b) => a + b);
 }
 
 function differentAnswersInAGroup (groupAnswersAsString){

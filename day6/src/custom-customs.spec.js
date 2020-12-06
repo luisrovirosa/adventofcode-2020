@@ -14,7 +14,7 @@ describe('single groups', () => {
     });
 });
 
-xdescribe('acceptance test', () => {
+describe('acceptance test', () => {
     test('number of different answers', () => {
         const answers = 'abc\n' +
             '\n' +
