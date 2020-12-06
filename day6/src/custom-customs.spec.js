@@ -1,7 +1,7 @@
 import {customCustoms, differentAnswersInAGroup} from './custom-customs';
 
 describe('single groups', () => {
-  xtest('count the answers of 1 person group', () => {
+  test('in a group of 1 person all the answers have been answered by all group', () => {
     expect(differentAnswersInAGroup('abc')).toBe(3);
   });
 
