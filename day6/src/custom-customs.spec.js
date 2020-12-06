@@ -5,12 +5,12 @@ describe('single groups', () => {
     expect(differentAnswersInAGroup('abc')).toBe(3);
   });
 
-  xtest('count the answers of multiple person group', () => {
-    expect(differentAnswersInAGroup('abc\nde\nf')).toBe(6);
+  test('no answers for a group where everyone answers different', () => {
+    expect(differentAnswersInAGroup('abc\nde\nf')).toBe(0);
   });
 
-  xtest('repeated answers does not count twice', () => {
-    expect(differentAnswersInAGroup('abc\nbc')).toBe(3);
+  test('repeated answers does not count twice', () => {
+    expect(differentAnswersInAGroup('abc\nbc\nbc')).toBe(2);
   });
 });
 
