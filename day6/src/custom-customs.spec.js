@@ -15,7 +15,7 @@ describe('single groups', () => {
 });
 
 describe('acceptance test', () => {
-  xtest('number of different answers', () => {
+  test('number of different answers', () => {
     const answers = 'abc\n' +
         '\n' +
         'a\n' +
@@ -31,7 +31,7 @@ describe('acceptance test', () => {
         'a\n' +
         '\n' +
         'b';
-    expect(customCustoms(answers)).toBe(11);
+    expect(customCustoms(answers)).toBe(6);
   });
 
 });
