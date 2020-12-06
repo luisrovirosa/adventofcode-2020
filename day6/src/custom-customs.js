@@ -3,7 +3,7 @@ function customCustoms() {
 }
 
 function differentAnswersInAGroup (groupAnswers){
-  return groupAnswers.split('').length;
+  return groupAnswers.replace(/\n/g, '').split('').length;
 }
 
 export {customCustoms, differentAnswersInAGroup};

@@ -4,6 +4,10 @@ describe('single groups', () => {
    test('one person group', () => {
        expect(differentAnswersInAGroup('abc')).toBe(3);
     });
+
+   test('multiple person group', () => {
+       expect(differentAnswersInAGroup('abc\nde\nf')).toBe(6);
+    });
 });
 
 xdescribe('acceptance test', () => {
