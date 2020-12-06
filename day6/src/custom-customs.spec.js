@@ -37,10 +37,10 @@ describe('acceptance test', () => {
 });
 
 describe('answers', () => {
-  xtest('first part', () => {
+  test('second part', () => {
     const fs = require('fs');
     const answers = fs.readFileSync('input.txt', 'utf8');
 
-    expect(customCustoms(answers)).toBe(7027);
+    expect(customCustoms(answers)).toBe(3579);
   });
 });
