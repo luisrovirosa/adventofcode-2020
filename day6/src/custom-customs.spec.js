@@ -1,21 +1,21 @@
 import {customCustoms, differentAnswersInAGroup} from './custom-customs';
 
 describe('single groups', () => {
-  test('count the answers of 1 person group', () => {
+  xtest('count the answers of 1 person group', () => {
     expect(differentAnswersInAGroup('abc')).toBe(3);
   });
 
-  test('count the answers of multiple person group', () => {
+  xtest('count the answers of multiple person group', () => {
     expect(differentAnswersInAGroup('abc\nde\nf')).toBe(6);
   });
 
-  test('repeated answers does not count twice', () => {
+  xtest('repeated answers does not count twice', () => {
     expect(differentAnswersInAGroup('abc\nbc')).toBe(3);
   });
 });
 
 describe('acceptance test', () => {
-  test('number of different answers', () => {
+  xtest('number of different answers', () => {
     const answers = 'abc\n' +
         '\n' +
         'a\n' +
@@ -37,7 +37,7 @@ describe('acceptance test', () => {
 });
 
 describe('answers', () => {
-  test('first part', () => {
+  xtest('first part', () => {
     const fs = require('fs');
     const answers = fs.readFileSync('input.txt', 'utf8');
 
